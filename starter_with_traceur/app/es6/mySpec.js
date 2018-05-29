@@ -5,13 +5,13 @@ describe("getters and setters", function(){
 			
 			class Person{
 				constructor(name){
-					this.name = name;
+					this._name = name;
 				}
 			}
 
 		
 		
-			class Employee {
+			class Employee extends Person {
 				
 				constructor(name){
 					this._name = name;

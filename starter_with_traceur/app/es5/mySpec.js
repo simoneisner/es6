@@ -2,7 +2,7 @@
 describe("getters and setters", function() {
   it("can have getters and setters", function() {
     var Person = function Person(name) {
-      this.name = name;
+      this._name = name;
     };
     ($traceurRuntime.createClass)(Person, {}, {});
     var Employee = function Employee(name) {
@@ -19,7 +19,7 @@ describe("getters and setters", function() {
         if (newValue) {}
         this._name = newValue;
       }
-    }, {});
+    }, {}, Person);
     var e1 = new Employee("Scott");
     expect(e1.name).toBe("SCOTT");
     e1.name = "Chris";
