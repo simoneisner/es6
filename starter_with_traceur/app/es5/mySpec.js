@@ -1,6 +1,10 @@
 "use strict";
 describe("getters and setters", function() {
   it("can have getters and setters", function() {
+    var Person = function Person(name) {
+      this.name = name;
+    };
+    ($traceurRuntime.createClass)(Person, {}, {});
     var Employee = function Employee(name) {
       this._name = name;
     };

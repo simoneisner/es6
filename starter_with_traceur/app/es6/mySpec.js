@@ -2,6 +2,15 @@ describe("getters and setters", function(){
 	
 	it("can have getters and setters", function(){
 	
+			
+			class Person{
+				constructor(name){
+					this.name = name;
+				}
+			}
+
+		
+		
 			class Employee {
 				
 				constructor(name){
