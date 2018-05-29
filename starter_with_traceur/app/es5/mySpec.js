@@ -1,10 +1,25 @@
 "use strict";
-describe("how to run a test", function() {
-  it("should work...", function() {
-    var add = (function(x, y) {
-      return x + y;
-    });
-    expect(add(5, 3)).toBe(8);
+describe("getters and setters", function() {
+  it("can have getters and setters", function() {
+    var Employee = function Employee(name) {
+      this._name = name;
+    };
+    ($traceurRuntime.createClass)(Employee, {
+      doWork: function() {
+        return "complete!";
+      },
+      get name() {
+        return this._name.toUpperCase();
+      },
+      set name(newValue) {
+        if (newValue) {}
+        this._name = newValue;
+      }
+    }, {});
+    var e1 = new Employee("Scott");
+    expect(e1.name).toBe("SCOTT");
+    e1.name = "Chris";
+    expect(e1.name).toBe("CHRIS");
   });
 });
 

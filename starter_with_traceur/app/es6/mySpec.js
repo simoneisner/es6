@@ -1,10 +1,38 @@
-describe("how to run a test", function(){
+describe("getters and setters", function(){
+	
+	it("can have getters and setters", function(){
+	
+			class Employee {
+				
+				constructor(name){
+					this._name = name;
+				}
+				
+				doWork(){
+					return "complete!";
+				}
 
-	it("should work...", function() {
+				get name(){
+					return this._name.toUpperCase();
+				}
 
-		let add = (x,y) => x + y;
-		expect(add(5,3)).toBe(8);
+				set name(newValue){
+					if(newValue){
 
+					}
+					this._name = newValue;
+				}
+			}
+			
+			let e1 = new Employee("Scott");
+
+			expect(e1.name).toBe("SCOTT");
+
+			e1.name = "Chris";
+			expect(e1.name).toBe("CHRIS");
+		
+		
+		
+		});
+	
 	});
-
-});
